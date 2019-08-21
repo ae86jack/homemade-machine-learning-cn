@@ -1,131 +1,127 @@
 # homemade-machine-learning-cn
 翻译https://github.com/trekhleb/homemade-machine-learning
 
-# Homemade Machine Learning
+# 简易机器学习
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trekhleb/homemade-machine-learning/master?filepath=notebooks)
-[![Build Status](https://travis-ci.org/trekhleb/homemade-machine-learning.svg?branch=master)](https://travis-ci.org/trekhleb/homemade-machine-learning)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ae86jack/homemade-machine-learning-cn/master?filepath=notebooks)
 
-_For Octave/MatLab version of this repository please check [machine-learning-octave](https://github.com/trekhleb/machine-learning-octave) project._
+_该仓库的Octave/MatLab语言版本请参见[machine-learning-octave](https://github.com/trekhleb/machine-learning-octave) 项目._
 
-> This repository contains examples of popular machine learning algorithms implemented in **Python** with mathematics behind them being explained. Each algorithm has interactive **Jupyter Notebook** demo that allows you to play with training data, algorithms configurations and immediately see the results, charts and predictions **right in your browser**. In most cases the explanations are based on [this great machine learning course](https://www.coursera.org/learn/machine-learning) by Andrew Ng.
+> 该项目包含了流行机器学习算法的Python示例，以及背后的数学原理解释。每个算法都有相应的Jupyter Notebook交互式示例，让你在浏览器就可以轻松调试训练数据，算法参数，马上看到输出结果，图表和预测结果。大多数原理解释基于Andrew Ng的[this great machine learning course](https://www.coursera.org/learn/machine-learning)。
 
-The purpose of this repository is _not_ to implement machine learning algorithms by using 3<sup>rd</sup> party library one-liners _but_ rather to practice implementing these algorithms from scratch and get better understanding of the mathematics behind each algorithm. That's why all algorithms implementations are called "homemade" and not intended to be used for production.
+该项目的意图不是用第3方库去实现机器学习算法，而是从零开始简易实现，从而可以更好地理解背后的数学原理。这就是为什么算法的实现叫“homemade”（homemade单词本意是自制，我在这里翻译为简易），不是为了在生产环境中使用。
 
-## Supervised Learning
+## 监督式学习 Supervised Learning
 
-In supervised learning we have a set of training data as an input and a set of labels or "correct answers" for each training set as an output. Then we're training our model (machine learning algorithm parameters) to map the input to the output correctly (to do correct prediction). The ultimate purpose is to find such model parameters that will successfully continue correct _input→output_ mapping (predictions) even for new input examples.
+在监督式学习中，我们将一组带标签的训练数据作为输出，把训练数据的标签作为输出。然后我们训练模型（调整机器学习算法的参数），让输入正确映射到输出（做到正确预测）。最终的目标是找到特定模型的参数，让 _输入→输出_ 的映射关系（预测）在新的数据集也保持正确。
 
-### Regression
+### 回归 Regression
 
-In regression problems we do real value predictions. Basically we try to draw a line/plane/n-dimensional plane along the training examples.
+在回归问题中，我们进行实际的价值预测。基本上，我们尝试在训练数据的图表中去画一条直线/一个平面/一个超平面。
 
-_Usage examples: stock price forecast, sales analysis, dependency of any number, etc._
+_场景例子：股票价格预测，销售分析，任何数据的相关性分析, 等等。_
 
-#### 🤖 Linear Regression
+#### 🤖 线性回归 Linear Regression
 
-- 📗 [Math | Linear Regression](homemade/linear_regression) - theory and links for further readings
-- ⚙️ [Code | Linear Regression](homemade/linear_regression/linear_regression.py) - implementation example
-- ▶️ [Demo | Univariate Linear Regression](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/linear_regression/univariate_linear_regression_demo.ipynb) - predict `country happiness` score by `economy GDP`
-- ▶️ [Demo | Multivariate Linear Regression](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/linear_regression/multivariate_linear_regression_demo.ipynb) - predict `country happiness` score by `economy GDP` and `freedom index`
-- ▶️ [Demo | Non-linear Regression](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/linear_regression/non_linear_regression_demo.ipynb) - use linear regression with _polynomial_ and _sinusoid_ features to predict non-linear dependencies
+- 📗 [数学 | 线性回归](homemade/linear_regression) - 理论和进一步阅读链接
+- ⚙️ [代码 | 线性回归](homemade/linear_regression/linear_regression.py) - 实现代码
+- ▶️ [Demo | 单变量线性回归](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/linear_regression/univariate_linear_regression_demo.ipynb) - 预测`国民幸福指数`，基于`经济GDP`
+- ▶️ [Demo | 多元线性回归](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/linear_regression/multivariate_linear_regression_demo.ipynb) - 预测`国民幸福指数`，基于`经济GDP`和`自由指数`
+- ▶️ [Demo | 非线性回归](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/linear_regression/non_linear_regression_demo.ipynb) - 线性回归加上多项式和正弦特性，来预测非线性的相关性。
 
-### Classification
+### 分类 Classification
 
-In classification problems we split input examples by certain characteristic.
+在分类问题中，我们把输入数据，依据某些特征来分类。
 
-_Usage examples: spam-filters, language detection, finding similar documents, handwritten letters recognition, etc._
+_场景例子：垃圾邮件过滤器，语言检测，查找类似的文档，识别手写字母，等等_
 
-#### 🤖 Logistic Regression
+#### 🤖 逻辑回归 Logistic Regression
 
-- 📗 [Math | Logistic Regression](homemade/logistic_regression) - theory and links for further readings
-- ⚙️ [Code | Logistic Regression](homemade/logistic_regression/logistic_regression.py) - implementation example
-- ▶️ [Demo | Logistic Regression (Linear Boundary)](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/logistic_regression/logistic_regression_with_linear_boundary_demo.ipynb) - predict Iris flower `class` based on `petal_length` and `petal_width`
-- ▶️ [Demo | Logistic Regression (Non-Linear Boundary)](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/logistic_regression/logistic_regression_with_non_linear_boundary_demo.ipynb) - predict microchip `validity` based on `param_1` and `param_2`
-- ▶️ [Demo | Multivariate Logistic Regression | MNIST](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/logistic_regression/multivariate_logistic_regression_demo.ipynb) - recognize handwritten digits from `28x28` pixel images
-- ▶️ [Demo | Multivariate Logistic Regression | Fashion MNIST](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/logistic_regression/multivariate_logistic_regression_fashion_demo.ipynb) - recognize clothes types from `28x28` pixel images
+- 📗 [数学 | 逻辑回归](homemade/logistic_regression) - 理论和进一步阅读链接
+- ⚙️ [代码 | 逻辑回归](homemade/logistic_regression/logistic_regression.py) - 实现代码
+- ▶️ [Demo | 逻辑回归 (线性范围)](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/logistic_regression/logistic_regression_with_linear_boundary_demo.ipynb) - 预测鸢尾花的品种，基于`花瓣长度`和`花瓣宽度`
+- ▶️ [Demo | 逻辑回归 (非线性范围)](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/logistic_regression/logistic_regression_with_non_linear_boundary_demo.ipynb) - 预测芯片的有效期，基于`参数1`和`参数2`
+- ▶️ [Demo | 多元逻辑回归 | MNIST](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/logistic_regression/multivariate_logistic_regression_demo.ipynb) - 从`28x28`像素的图片中，识别手写数字
+- ▶️ [Demo | 多元逻辑回归 | 时装 MNIST](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/logistic_regression/multivariate_logistic_regression_fashion_demo.ipynb) - 从`28x28`像素的图片中，识别衣服类型
 
-## Unsupervised Learning
+## 非监督式学习 Unsupervised Learning
 
-Unsupervised learning is a branch of machine learning that learns from test data that has not been labeled, classified or categorized. Instead of responding to feedback, unsupervised learning identifies commonalities in the data and reacts based on the presence or absence of such commonalities in each new piece of data.
+非监督式学习是机器学习的一个分支，从没有标签，没有归类的测试数据中学习。不是基于反馈学习，非监督学习识别出数据中的共性，在新的数据中基于共性是否存在来输出结果。
 
-### Clustering
+### 聚类 Clustering
 
-In clustering problems we split the training examples by unknown characteristics. The algorithm itself decides what characteristic to use for splitting.
+在聚类问题中，我们通过某些未知的特征把训练数据分类。算法自身确定用哪些特征来分类。
 
-_Usage examples: market segmentation, social networks analysis, organize computing clusters, astronomical data analysis, image compression, etc._
+_场景例子：市场细分，社交网络分析，组织计算集群，天文数据分析，图片压缩，等等_
 
-#### 🤖 K-means Algorithm
+#### 🤖 K均值算法 K-means Algorithm
 
-- 📗 [Math | K-means Algorithm](homemade/k_means) - theory and links for further readings
-- ⚙️ [Code | K-means Algorithm](homemade/k_means/k_means.py) - implementation example
-- ▶️ [Demo | K-means Algorithm](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/k_means/k_means_demo.ipynb) - split Iris flowers into clusters based on `petal_length` and `petal_width`
+- 📗 [数学 | K均值算法](homemade/k_means) - 理论和进一步阅读链接
+- ⚙️ [代码 | K均值算法](homemade/k_means/k_means.py) - 实现代码
+- ▶️ [Demo | K均值算法](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/k_means/k_means_demo.ipynb) - 把鸢尾花分类，基于`花瓣长度`和`花瓣宽度`
 
-### Anomaly Detection
+### 异常检测 Anomaly Detection
 
-Anomaly detection (also outlier detection) is the identification of rare items, events or observations which raise suspicions by differing significantly from the majority of the data.
+异常检测（异常值检测）是识别出罕见的数据，或者观察值，怀疑与其他大多数数据有着显著的不同。
 
-_Usage examples: intrusion detection, fraud detection, system health monitoring, removing anomalous data from the dataset etc._
+_场景例子：侵入检测，诈骗检测，系统健康监控，从数据集中移除异常数据，等等_
 
-#### 🤖 Anomaly Detection using Gaussian Distribution
+#### 🤖 用高斯分布做异常检测 Anomaly Detection using Gaussian Distribution
 
-- 📗 [Math | Anomaly Detection using Gaussian Distribution](homemade/anomaly_detection) - theory and links for further readings
-- ⚙️ [Code | Anomaly Detection using Gaussian Distribution](homemade/anomaly_detection/gaussian_anomaly_detection.py) - implementation example
-- ▶️ [Demo | Anomaly Detection](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/anomaly_detection/anomaly_detection_gaussian_demo.ipynb) - find anomalies in server operational parameters like `latency` and `threshold`
+- 📗 [数学 | 用高斯分布做异常检测](homemade/anomaly_detection) - 理论和进一步阅读链接
+- ⚙️ [代码 | 用高斯分布做异常检测](homemade/anomaly_detection/gaussian_anomaly_detection.py) - 实现代码
+- ▶️ [Demo | 异常检测](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/anomaly_detection/anomaly_detection_gaussian_demo.ipynb) - 发现服务器运行时的指数异常，比如`延迟`，`阈值`等指数
 
-## Neural Network (NN)
+## 神经网络 Neural Network (NN)
 
-The neural network itself isn't an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs.
+神经网络本身不是一个算法，而是一个框架，让很多不同的机器学习算法一起工作，产生复杂的数据输出。
 
-_Usage examples: as a substitute of all other algorithms in general, image recognition, voice recognition, image processing (applying specific style), language translation, etc._
+_场景例子：替代其他算法，图像识别，语音识别，图像处理（换风格），语言翻译，等等_
 
-#### 🤖 Multilayer Perceptron (MLP)
+#### 🤖 多层感知器 Multilayer Perceptron (MLP)
 
-- 📗 [Math | Multilayer Perceptron](homemade/neural_network) - theory and links for further readings
-- ⚙️ [Code | Multilayer Perceptron](homemade/neural_network/multilayer_perceptron.py) - implementation example
-- ▶️ [Demo | Multilayer Perceptron | MNIST](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/neural_network/multilayer_perceptron_demo.ipynb) - recognize handwritten digits from `28x28` pixel images
-- ▶️ [Demo | Multilayer Perceptron | Fashion MNIST](https://nbviewer.jupyter.org/github/trekhleb/homemade-machine-learning/blob/master/notebooks/neural_network/multilayer_perceptron_fashion_demo.ipynb) - recognize the type of clothes from `28x28` pixel images
+- 📗 [数学 | 多层感知器](homemade/neural_network) - 理论和进一步阅读链接
+- ⚙️ [代码 | 多层感知器](homemade/neural_network/multilayer_perceptron.py) - 实现代码
+- ▶️ [Demo | 多层感知器 | MNIST](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/neural_network/multilayer_perceptron_demo.ipynb) - 从`28x28`像素的图片中，识别手写数字
+- ▶️ [Demo | 多层感知器 | 时装 MNIST](https://nbviewer.jupyter.org/github/ae86jack/homemade-machine-learning-cn/blob/master/notebooks/neural_network/multilayer_perceptron_fashion_demo.ipynb) - 从`28x28`像素的图片中，识别衣服类型
 
-## Machine Learning Map
+## 机器学习脑图
 
 ![Machine Learning Map](images/machine-learning-map.png)
 
-The source of the following machine learning topics map is [this wonderful blog post](https://vas3k.ru/blog/machine_learning/)
+这张机器学习主题的脑图来自[这篇有趣的博客](https://vas3k.ru/blog/machine_learning/)
 
-## Prerequisites
+## 环境配置
 
-#### Installing Python
+#### 安装Python
 
-Make sure that you have [Python installed](https://realpython.com/installing-python/) on your machine.
+确保你已经在电脑上[安装好Python](https://realpython.com/installing-python/)
 
-You might want to use [venv](https://docs.python.org/3/library/venv.html) standard Python library
-to create virtual environments and have Python, `pip` and all dependent packages to be installed and 
-served from the local project directory to avoid messing with system wide packages and their 
-versions.
+你可能想用[venv](https://docs.python.org/3/library/venv.html)标准Python库来创建虚拟环境，`pip`安装依赖包，不被系统的Python环境搞混。
 
-#### Installing Dependencies
+#### 安装依赖包
 
-Install all dependencies that are required for the project by running:
+安装项目的所有的依赖包，运行以下命令：
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Launching Jupyter Locally
+#### 本地启动Jupyter
 
-All demos in the project may be run directly in your browser without installing Jupyter locally. But if you want to launch [Jupyter Notebook](http://jupyter.org/) locally you may do it by running the following command from the root folder of the project:
+项目中的所有Demo都可以在浏览器中直接执行，无需本地安装Jupyter。但是你想本地启动[Jupyter Notebook](http://jupyter.org/)，你可以在项目的根目录执行以下命令：
 
 ```bash
 jupyter notebook
 ```
-After this Jupyter Notebook will be accessible by `http://localhost:8888`.
+然后Jupyter Notebook就可以访问了，地址是`http://localhost:8888`
 
-#### Launching Jupyter Remotely
+#### 远程启动Jupyter
 
-Each algorithm section contains demo links to [Jupyter NBViewer](http://nbviewer.jupyter.org/). This is fast online previewer for Jupyter notebooks where you may see demo code, charts and data right in your browser without installing anything locally. In case if you want to _change_ the code and _experiment_ with demo notebook you need to launch the notebook in [Binder](https://mybinder.org/). You may do it by simply clicking the _"Execute on Binder"_ link in top right corner of the NBViewer.
+每个算法模块都有链接到[Jupyter NBViewer](http://nbviewer.jupyter.org/)。这是一个快速的，在线预览Jupyter Notebook的网站，你可以在浏览器中看到Demo代码，图表和数据，而不用本地安装。如果你想在notebook中修改代码，或者做下试验，你需要在[Binder](https://mybinder.org/)中启动notebook。你也可以一键点击 _"Execute on Binder"_ 链接来启动notebook，按钮在NBViewer网站的右上角。
 
 ![](./images/binder-button-place.png)
 
-## Datasets
+## 数据集
 
-The list of datasets that is being used for Jupyter Notebook demos may be found in [data folder](data).
+Jupyter Notebook用的数据可以在 [数据文件夹](data)找到.
